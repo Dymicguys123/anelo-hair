@@ -1,0 +1,23 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex"><title>ANELO 헤어모델 프롬프트</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f7f4ee;font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:#111}
+.wrap{max-width:420px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 24px) 20px calc(env(safe-area-inset-bottom) + 32px)}
+.brand{font-size:12px;letter-spacing:.24em;color:#8a8478;text-align:center}
+h1{font-size:21px;text-align:center;margin:8px 0 16px;font-family:Georgia,'AppleMyungjo','Batang',serif;font-weight:600}
+.photo{width:100%;aspect-ratio:3/4;border-radius:14px;object-fit:cover;display:block;background:#d9d3c7}
+.btn{display:block;width:100%;margin-top:18px;padding:17px;border:0;border-radius:12px;background:#111;color:#fff;font-size:17px;font-weight:700;font-family:inherit;-webkit-appearance:none}
+.btn.ok{background:#1f8a4c}.hint{text-align:center;font-size:14px;color:#555;margin-top:12px;line-height:1.6}
+.store{display:flex;gap:8px;margin-top:16px}.store a{flex:1;text-align:center;padding:12px;border:1px solid #111;border-radius:10px;color:#111;text-decoration:none;font-size:14px}
+textarea{position:fixed;left:-9999px;top:0}
+</style></head><body><div class="wrap">
+<div class="brand">ANELO HAIR</div><h1>레이어드 롱 · 시스루뱅</h1>
+<img class="photo" src="m6138.jpg" alt="헤어모델 예시">
+<button class="btn" id="b">프롬프트 복사</button>
+<div class="hint" id="h">누르면 프롬프트가 복사돼요</div>
+<div class="store"><a href="https://apps.apple.com/app/id6759630402" id="ios">아이폰 리피</a><a href="https://play.google.com/store/apps/details?id=com.refinetool.app" id="aos">안드로이드 리피</a></div>
+</div><textarea id="ta" readonly></textarea><script>
+const P="A straight-on medium shot, cropped at the upper thighs, captures a young East Asian woman in her early 20s standing against a textured gray stone-panel wall inside a modern hair salon. She has soft, youthful features, smooth fair skin with a natural dewy finish, and glossy rosy-pink lips slightly parted as she glances off to the viewer’s left with a relaxed, candid expression. Her freshly styled hair is the clear focal point: long, glossy chocolate-brown hair in a heavily layered cut with wispy see-through curtain bangs, face-framing feathered layers, and soft inward and outward flicks cascading past her chest. She wears a fitted heather-gray cap-sleeve baby tee with a wide scoop neckline, a hint of delicate lace trim peeking at the neckline, and a faint fine chain necklace, paired with low-rise dark indigo jeans with faded whiskering and contrast stitching. Her stance is natural and upright, arms tucked behind her back, shoulders relaxed. The background features speckled granite-like wall panels divided by slim vertical seams, with a bright window and a hanging blind cord along the left edge, a dark product box and clear acrylic organizer with a coiled black cord on a white counter, and a sliver of metallic fixture and white cable at the right. Soft natural daylight from the window side illuminates her face evenly, adding gentle sheen to her hair and skin with minimal shadow. The palette is dominated by cool stone grays, heather gray, warm brown hair tones, denim blue, and pale warm skin. Captured with modern smartphone clarity and deep focus, the image has a clean salon-portfolio, social-media aesthetic that feels fresh, casual, youthful, and understated.\n\nHEX VALUES: [\"#b0a79e\",\"#d1c3b8\",\"#a89a8f\",\"#c4b1a3\",\"#94867c\",\"#e8d7c7\",\"#847165\",\"#68564c\",\"#211916\",\"#43362f\",\"#deecee\",\"#c18468\"]";
+async function copy(t){try{await navigator.clipboard.writeText(t);return true}catch(e){const a=document.getElementById('ta');a.value=t;a.select();a.setSelectionRange(0,t.length);try{return document.execCommand('copy')}catch(_){return false}}}
+document.getElementById('b').onclick=async()=>{const ok=await copy(P);const b=document.getElementById('b'),h=document.getElementById('h');
+if(ok){b.textContent='✓ 복사됐어요';b.className='btn ok';h.textContent='리피 앱 → 새 모델 만들기 → [붙여넣기]만 누르세요'}else{h.textContent='복사가 안 됐어요. 한 번 더 눌러 주세요'}};
+</script></body></html>
